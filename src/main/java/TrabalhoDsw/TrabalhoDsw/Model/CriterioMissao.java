@@ -1,19 +1,19 @@
 package TrabalhoDsw.TrabalhoDsw.Model;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.Temporal;
+import javax.persistence.OneToMany;
 
 /**
  * @author Alex Oderdenge
  */
 @Entity
-public class Juiz implements Serializable {
+public class CriterioMissao implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -22,15 +22,13 @@ public class Juiz implements Serializable {
 
     private String nome;
 
-    private String rg;
-
-    private String cpf;
-
-    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
-    private Date dataNasc;
+    private String descricao;
 
     @ManyToOne
     private Categoria categoria;
+
+    @OneToMany(mappedBy = "criterioMissao")
+    private List<Altenativa> altenativas;
 
     public Long getId() {
         return id;
@@ -48,28 +46,12 @@ public class Juiz implements Serializable {
         this.nome = nome;
     }
 
-    public String getRg() {
-        return rg;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setRg(String rg) {
-        this.rg = rg;
-    }
-
-    public String getCpf() {
-        return cpf;
-    }
-
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
-    }
-
-    public Date getDataNasc() {
-        return dataNasc;
-    }
-
-    public void setDataNasc(Date dataNasc) {
-        this.dataNasc = dataNasc;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 
     public Categoria getCategoria() {
@@ -78,5 +60,13 @@ public class Juiz implements Serializable {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    public List<Altenativa> getAltenativas() {
+        return altenativas;
+    }
+
+    public void setAltenativas(List<Altenativa> altenativas) {
+        this.altenativas = altenativas;
     }
 }
