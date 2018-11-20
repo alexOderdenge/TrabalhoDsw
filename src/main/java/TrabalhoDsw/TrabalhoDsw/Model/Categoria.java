@@ -14,7 +14,6 @@ import javax.persistence.OneToMany;
 @Entity
 public class Categoria implements Serializable {
 
-
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -26,6 +25,12 @@ public class Categoria implements Serializable {
 
     @OneToMany(mappedBy = "categoria")
     private List<Sala> salas;
+
+    @OneToMany(mappedBy = "categoria")
+    private List<Juiz> juizes;
+
+    @OneToMany(mappedBy = "categoria")
+    private List<CriterioMissao> criteriosMissoes;
 
     public Long getId() {
         return id;
@@ -59,5 +64,19 @@ public class Categoria implements Serializable {
         this.salas = salas;
     }
 
-    
+    public List<Juiz> getJuizes() {
+        return juizes;
+    }
+
+    public void setJuizes(List<Juiz> juizes) {
+        this.juizes = juizes;
+    }
+
+    public List<CriterioMissao> getCriteiosMissoes() {
+        return criteriosMissoes;
+    }
+
+    public void setCriteiosMissoes(List<CriterioMissao> criteriosMissoes) {
+        this.criteriosMissoes = criteriosMissoes;
+    }
 }
