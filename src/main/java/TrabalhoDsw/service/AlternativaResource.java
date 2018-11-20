@@ -1,7 +1,7 @@
 package TrabalhoDsw.service;
 
-import TrabalhoDsw.TrabalhoDsw.Model.Altenativa;
-import TrabalhoDsw.TrabalhoDsw.Model.AlternativaRepositorio;
+import TrabalhoDsw.Model.Altenativa;
+import TrabalhoDsw.Model.AlternativaRepositorio;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
