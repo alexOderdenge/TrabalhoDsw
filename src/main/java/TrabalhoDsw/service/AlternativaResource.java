@@ -1,6 +1,6 @@
 package TrabalhoDsw.service;
 
-import TrabalhoDsw.TrabalhoDsw.Model.Alternativa;
+import TrabalhoDsw.TrabalhoDsw.Model.Altenativa;
 import TrabalhoDsw.TrabalhoDsw.Model.AlternativaRepositorio;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,17 +23,17 @@ public class AlternativaResource {
     @Autowired
     private AlternativaRepositorio alternativas;
     @PostMapping
-    public Alternativa salvar(@RequestBody Alternativa alter){
+    public Altenativa salvar(@RequestBody Altenativa alter){
         return alternativas.save(alter);
     }
     
     @GetMapping
-    public List<Alternativa> listar(){
+    public List<Altenativa> listar(){
         return alternativas.findAll();
     }
     
     @PutMapping
-    public Alternativa editar(@RequestBody Alternativa alter){
+    public Altenativa editar(@RequestBody Altenativa alter){
         return alternativas.save(alter);
     }
 }
