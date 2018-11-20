@@ -1,7 +1,7 @@
 package TrabalhoDsw.service;
 
-import TrabalhoDsw.TrabalhoDsw.Model.Arena;
-import TrabalhoDsw.TrabalhoDsw.Model.ArenaRepositorio;
+import TrabalhoDsw.TrabalhoDsw.Model.Competicao;
+import TrabalhoDsw.TrabalhoDsw.Model.CompeticaoRepositorio;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,26 +15,24 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author Dênis
  */
-
 @RestController
-@RequestMapping("arenas")
-public class ArenaResource {
-     
+@RequestMapping("competicoes")
+public class CompeticaoResource {
+    
     @Autowired
-    private ArenaRepositorio arenas;
+    private CompeticaoRepositorio competicoes;
     @PostMapping
-    public Arena salvar(@RequestBody Arena are){
-        return arenas.save(are);
+    public Competicao salvar(@RequestBody Competicao comp){
+        return competicoes.save(comp);
     }
     
     @GetMapping
-    public List<Arena> listar(){
-        return arenas.findAll();
+    public List<Competicao> listar(){
+        return competicoes.findAll();
     }
     
     @PutMapping
-    public Arena editar(@RequestBody Arena are){
-        return arenas.save(are);
+    public Competicao editar(@RequestBody Competicao comp){
+        return competicoes.save(comp);
     }
 }
- 
