@@ -28,7 +28,7 @@ public class CriterioMissao implements Serializable {
     private Categoria categoria;
 
     @OneToMany(mappedBy = "criterioMissao")
-    private List<Altenativa> altenativas;
+    private List<Alternativa> altenativas;
 
     public Long getId() {
         return id;
@@ -62,11 +62,11 @@ public class CriterioMissao implements Serializable {
         this.categoria = categoria;
     }
 
-    public List<Altenativa> getAltenativas() {
+    public List<Alternativa> getAltenativas() {
         return altenativas;
     }
 
-    public void setAltenativas(List<Altenativa> altenativas) {
+    public void setAltenativas(List<Alternativa> altenativas) {
         this.altenativas = altenativas;
     }
 }

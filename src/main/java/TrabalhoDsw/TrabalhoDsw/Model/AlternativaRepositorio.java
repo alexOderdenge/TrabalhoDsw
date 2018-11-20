@@ -1,0 +1,11 @@
+package TrabalhoDsw.TrabalhoDsw.Model;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+/**
+ *
+ * @author Dênis
+ */
+public interface AlternativaRepositorio extends JpaRepository<Alternativa, Long>{
+    
+}
