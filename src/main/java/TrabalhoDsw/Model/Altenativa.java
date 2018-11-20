@@ -1,4 +1,4 @@
-package TrabalhoDsw.TrabalhoDsw.Model;
+package TrabalhoDsw.Model;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
@@ -11,17 +11,17 @@ import javax.persistence.ManyToOne;
  * @author Alex Oderdenge
  */
 @Entity
-public class Arena implements Serializable {
+public class Altenativa implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String nome;
+    private double valor;
 
     @ManyToOne
-    private Competicao competicao;
+    private CriterioMissao criterioMissao;
 
     public Long getId() {
         return id;
@@ -29,5 +29,21 @@ public class Arena implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public void setValor(double valor) {
+        this.valor = valor;
+    }
+
+    public CriterioMissao getCriterioMissao() {
+        return criterioMissao;
+    }
+
+    public void setCriterioMissao(CriterioMissao criterioMissao) {
+        this.criterioMissao = criterioMissao;
     }
 }

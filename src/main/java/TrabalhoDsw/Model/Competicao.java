@@ -1,4 +1,4 @@
-package TrabalhoDsw.TrabalhoDsw.Model;
+package TrabalhoDsw.Model;
 
 import java.io.Serializable;
 import java.util.Date;

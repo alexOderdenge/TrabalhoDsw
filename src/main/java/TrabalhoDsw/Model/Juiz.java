@@ -1,17 +1,19 @@
-package TrabalhoDsw.TrabalhoDsw.Model;
+package TrabalhoDsw.Model;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Temporal;
 
 /**
  * @author Alex Oderdenge
  */
 @Entity
-public class Sala implements Serializable {
+public class Juiz implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -20,8 +22,12 @@ public class Sala implements Serializable {
 
     private String nome;
 
-    @ManyToOne
-    private Competicao competicao;
+    private String rg;
+
+    private String cpf;
+
+    @Temporal(javax.persistence.TemporalType.TIMESTAMP)
+    private Date dataNasc;
 
     @ManyToOne
     private Categoria categoria;
@@ -42,12 +48,28 @@ public class Sala implements Serializable {
         this.nome = nome;
     }
 
-    public Competicao getCompeticao() {
-        return competicao;
+    public String getRg() {
+        return rg;
     }
 
-    public void setCompeticao(Competicao competicao) {
-        this.competicao = competicao;
+    public void setRg(String rg) {
+        this.rg = rg;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public Date getDataNasc() {
+        return dataNasc;
+    }
+
+    public void setDataNasc(Date dataNasc) {
+        this.dataNasc = dataNasc;
     }
 
     public Categoria getCategoria() {

@@ -1,6 +1,6 @@
-package TrabalhoDsw.TrabalhoDsw.Model;
+package TrabalhoDsw.Model;
 
-import TrabalhoDsw.TrabalhoDsw.Model.Integrante;
+import TrabalhoDsw.Model.Integrante;
 import java.io.Serializable;
 import java.util.List;
 import javax.persistence.Entity;
