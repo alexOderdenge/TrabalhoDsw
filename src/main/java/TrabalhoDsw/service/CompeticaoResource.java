@@ -1,7 +1,7 @@
 package TrabalhoDsw.service;
 
-import TrabalhoDsw.TrabalhoDsw.Model.Competicao;
-import TrabalhoDsw.TrabalhoDsw.Model.CompeticaoRepositorio;
+import TrabalhoDsw.Model.Competicao;
+import TrabalhoDsw.Model.CompeticaoRepositorio;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

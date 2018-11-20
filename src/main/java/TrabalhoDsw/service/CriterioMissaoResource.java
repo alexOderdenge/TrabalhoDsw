@@ -5,8 +5,8 @@
  */
 package TrabalhoDsw.service;
 
-import TrabalhoDsw.TrabalhoDsw.Model.CriterioMissao;
-import TrabalhoDsw.TrabalhoDsw.Model.CriterioMissaoRepositorio;
+import TrabalhoDsw.Model.CriterioMissao;
+import TrabalhoDsw.Model.CriterioMissaoRepositorio;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

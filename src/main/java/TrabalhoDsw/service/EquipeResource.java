@@ -5,8 +5,8 @@
  */
 package TrabalhoDsw.service;
 
-import TrabalhoDsw.TrabalhoDsw.Model.Equipe;
-import TrabalhoDsw.TrabalhoDsw.Model.EquipeRepositorio;
+import TrabalhoDsw.Model.Equipe;
+import TrabalhoDsw.Model.EquipeRepositorio;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
