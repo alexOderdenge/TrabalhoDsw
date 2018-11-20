@@ -1,7 +1,7 @@
 package TrabalhoDsw.service;
 
-import TrabalhoDsw.TrabalhoDsw.Model.Arena;
-import TrabalhoDsw.TrabalhoDsw.Model.ArenaRepositorio;
+import TrabalhoDsw.Model.Arena;
+import TrabalhoDsw.Model.ArenaRepositorio;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -1,4 +1,4 @@
-package TrabalhoDsw.TrabalhoDsw.Model;
+package TrabalhoDsw.Model;
 
 import java.io.Serializable;
 import java.util.List;
@@ -6,14 +6,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 /**
  * @author Alex Oderdenge
  */
 @Entity
-public class CriterioMissao implements Serializable {
+public class Temporada implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -24,11 +23,8 @@ public class CriterioMissao implements Serializable {
 
     private String descricao;
 
-    @ManyToOne
-    private Categoria categoria;
-
-    @OneToMany(mappedBy = "criterioMissao")
-    private List<Altenativa> altenativas;
+    @OneToMany(mappedBy = "temporada")
+    private List<Competicao> competicoes;
 
     public Long getId() {
         return id;
@@ -54,19 +50,11 @@ public class CriterioMissao implements Serializable {
         this.descricao = descricao;
     }
 
-    public Categoria getCategoria() {
-        return categoria;
+    public List<Competicao> getCompeticoes() {
+        return competicoes;
     }
 
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
-
-    public List<Altenativa> getAltenativas() {
-        return altenativas;
-    }
-
-    public void setAltenativas(List<Altenativa> altenativas) {
-        this.altenativas = altenativas;
+    public void setCompeticoes(List<Competicao> competicoes) {
+        this.competicoes = competicoes;
     }
 }

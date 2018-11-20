@@ -1,4 +1,4 @@
-package TrabalhoDsw.TrabalhoDsw.Model;
+package TrabalhoDsw.Model;
 
 import java.io.Serializable;
 import java.util.List;
@@ -6,13 +6,14 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 /**
  * @author Alex Oderdenge
  */
 @Entity
-public class Categoria implements Serializable {
+public class CriterioMissao implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -23,14 +24,11 @@ public class Categoria implements Serializable {
 
     private String descricao;
 
-    @OneToMany(mappedBy = "categoria")
-    private List<Sala> salas;
+    @ManyToOne
+    private Categoria categoria;
 
-    @OneToMany(mappedBy = "categoria")
-    private List<Juiz> juizes;
-
-    @OneToMany(mappedBy = "categoria")
-    private List<CriterioMissao> criteriosMissoes;
+    @OneToMany(mappedBy = "criterioMissao")
+    private List<Altenativa> altenativas;
 
     public Long getId() {
         return id;
@@ -56,27 +54,19 @@ public class Categoria implements Serializable {
         this.descricao = descricao;
     }
 
-    public List<Sala> getSalas() {
-        return salas;
+    public Categoria getCategoria() {
+        return categoria;
     }
 
-    public void setSalas(List<Sala> salas) {
-        this.salas = salas;
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
-    public List<Juiz> getJuizes() {
-        return juizes;
+    public List<Altenativa> getAltenativas() {
+        return altenativas;
     }
 
-    public void setJuizes(List<Juiz> juizes) {
-        this.juizes = juizes;
-    }
-
-    public List<CriterioMissao> getCriteiosMissoes() {
-        return criteriosMissoes;
-    }
-
-    public void setCriteiosMissoes(List<CriterioMissao> criteriosMissoes) {
-        this.criteriosMissoes = criteriosMissoes;
+    public void setAltenativas(List<Altenativa> altenativas) {
+        this.altenativas = altenativas;
     }
 }

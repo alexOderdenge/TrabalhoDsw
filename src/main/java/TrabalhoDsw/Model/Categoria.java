@@ -1,4 +1,4 @@
-package TrabalhoDsw.TrabalhoDsw.Model;
+package TrabalhoDsw.Model;
 
 import java.io.Serializable;
 import java.util.List;
@@ -12,7 +12,7 @@ import javax.persistence.OneToMany;
  * @author Alex Oderdenge
  */
 @Entity
-public class Temporada implements Serializable {
+public class Categoria implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -23,8 +23,14 @@ public class Temporada implements Serializable {
 
     private String descricao;
 
-    @OneToMany(mappedBy = "temporada")
-    private List<Competicao> competicoes;
+    @OneToMany(mappedBy = "categoria")
+    private List<Sala> salas;
+
+    @OneToMany(mappedBy = "categoria")
+    private List<Juiz> juizes;
+
+    @OneToMany(mappedBy = "categoria")
+    private List<CriterioMissao> criteriosMissoes;
 
     public Long getId() {
         return id;
@@ -50,11 +56,27 @@ public class Temporada implements Serializable {
         this.descricao = descricao;
     }
 
-    public List<Competicao> getCompeticoes() {
-        return competicoes;
+    public List<Sala> getSalas() {
+        return salas;
     }
 
-    public void setCompeticoes(List<Competicao> competicoes) {
-        this.competicoes = competicoes;
+    public void setSalas(List<Sala> salas) {
+        this.salas = salas;
+    }
+
+    public List<Juiz> getJuizes() {
+        return juizes;
+    }
+
+    public void setJuizes(List<Juiz> juizes) {
+        this.juizes = juizes;
+    }
+
+    public List<CriterioMissao> getCriteiosMissoes() {
+        return criteriosMissoes;
+    }
+
+    public void setCriteiosMissoes(List<CriterioMissao> criteriosMissoes) {
+        this.criteriosMissoes = criteriosMissoes;
     }
 }
