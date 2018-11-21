@@ -3,8 +3,8 @@ package TrabalhoDsw.Model;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
- * @author Dênis
+ * @author Alex Oderdenge
  */
-public interface ArenaRepositorio extends JpaRepository<Arena, Long>{
+public interface SalaRepositorio extends JpaRepository<Sala, Long> {
 
 }
