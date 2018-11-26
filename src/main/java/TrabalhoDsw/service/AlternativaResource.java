@@ -31,8 +31,8 @@ public class AlternativaResource {
     }
 
     @PostMapping
-    public Alternativa salvar(@RequestBody Alternativa cli){
-        return alternativas.save(cli);
+    public Alternativa salvar(@RequestBody Alternativa alter){
+        return alternativas.save(alter);
     }
 
     @GetMapping
@@ -41,8 +41,8 @@ public class AlternativaResource {
     }
 
     @PutMapping
-    public Alternativa editar(@RequestBody Alternativa cli){
-        return alternativas.save(cli);
+    public Alternativa editar(@RequestBody Alternativa alter){
+        return alternativas.save(alter);
     }
 
     @DeleteMapping("/{id}")

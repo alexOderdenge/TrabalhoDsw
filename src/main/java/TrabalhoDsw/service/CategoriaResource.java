@@ -31,8 +31,8 @@ public class CategoriaResource {
     }
 
     @PostMapping
-    public Categoria salvar(@RequestBody Categoria cli) {
-        return categorias.save(cli);
+    public Categoria salvar(@RequestBody Categoria cat) {
+        return categorias.save(cat);
     }
 
     @GetMapping
@@ -41,8 +41,8 @@ public class CategoriaResource {
     }
 
     @PutMapping
-    public Categoria editar(@RequestBody Categoria cli) {
-        return categorias.save(cli);
+    public Categoria editar(@RequestBody Categoria cat) {
+        return categorias.save(cat);
     }
 
     @DeleteMapping("/{id}")
