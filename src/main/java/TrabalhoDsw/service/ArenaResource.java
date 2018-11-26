@@ -31,8 +31,8 @@ public class ArenaResource {
     }
 
     @PostMapping
-    public Arena salvar(@RequestBody Arena cli){
-        return arenas.save(cli);
+    public Arena salvar(@RequestBody Arena are){
+        return arenas.save(are);
     }
 
     @GetMapping
@@ -41,8 +41,8 @@ public class ArenaResource {
     }
 
     @PutMapping
-    public Arena editar(@RequestBody Arena cli){
-        return arenas.save(cli);
+    public Arena editar(@RequestBody Arena are){
+        return arenas.save(are);
     }
 
     @DeleteMapping("/{id}")
