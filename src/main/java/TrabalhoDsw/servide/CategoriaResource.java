@@ -1,7 +1,9 @@
-package TrabalhoDsw.service;
+package TrabalhoDsw.servide;
 
-import TrabalhoDsw.Model.Competicao;
-import TrabalhoDsw.Model.CompeticaoRepositorio;
+import TrabalhoDsw.Model.Categoria;
+import TrabalhoDsw.Model.Categoria;
+import TrabalhoDsw.Model.CategoriaRepositorio;
+import TrabalhoDsw.Model.CategoriaRepositorio;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,37 +17,38 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author Dênis
+ * @author Alex Odedenge
  */
+
 @RestController
-@RequestMapping("competicoes")
-public class CompeticaoResource {
+@RequestMapping("/categorias")
+public class CategoriaResource {
 
     @Autowired
-    private CompeticaoRepositorio competicoes;
+    private CategoriaRepositorio categorias;
 
     @GetMapping("/{id}")
-    public Optional<Competicao> buscar (@PathVariable Long id) {
-        return competicoes.findById(id);
+    public Optional<Categoria> buscar (@PathVariable Long id) {
+        return categorias.findById(id);
     }
 
     @PostMapping
-    public Competicao salvar(@RequestBody Competicao comp){
-        return competicoes.save(comp);
+    public Categoria salvar(@RequestBody Categoria cat) {
+        return categorias.save(cat);
     }
 
     @GetMapping
-    public List<Competicao> listar(){
-        return competicoes.findAll();
+    public List<Categoria> listar() {
+        return categorias.findAll();
     }
 
     @PutMapping
-    public Competicao editar(@RequestBody Competicao comp){
-        return competicoes.save(comp);
+    public Categoria editar(@RequestBody Categoria cat) {
+        return categorias.save(cat);
     }
 
     @DeleteMapping("/{id}")
     public void deletar(@PathVariable Long id) {
-        competicoes.deleteById(id);
+        categorias.deleteById(id);
     }
 }
