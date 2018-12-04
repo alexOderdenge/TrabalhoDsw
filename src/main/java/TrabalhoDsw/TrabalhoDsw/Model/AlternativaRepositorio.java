@@ -1,5 +1,6 @@
-package TrabalhoDsw.Model;
+package TrabalhoDsw.TrabalhoDsw.Model;
 
+import TrabalhoDsw.TrabalhoDsw.Model.Alternativa;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

@@ -1,4 +1,4 @@
-package TrabalhoDsw.Model;
+package TrabalhoDsw.TrabalhoDsw.Model;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

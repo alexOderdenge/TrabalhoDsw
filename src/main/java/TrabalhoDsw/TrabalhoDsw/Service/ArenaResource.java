@@ -1,7 +1,7 @@
-package TrabalhoDsw.service;
+package TrabalhoDsw.TrabalhoDsw.Service;
 
-import TrabalhoDsw.Model.CriterioMissao;
-import TrabalhoDsw.Model.CriterioMissaoRepositorio;
+import TrabalhoDsw.TrabalhoDsw.Model.Arena;
+import TrabalhoDsw.TrabalhoDsw.Model.ArenaRepositorio;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,35 +17,36 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @author Dênis
  */
+
 @RestController
-@RequestMapping("criterios")
-public class CriterioMissaoResource {
+@RequestMapping("/arenas")
+public class ArenaResource {
 
     @Autowired
-    private CriterioMissaoRepositorio criterios;
+    private ArenaRepositorio arenas;
 
     @GetMapping("/{id}")
-    public Optional<CriterioMissao> buscar (@PathVariable Long id) {
-        return criterios.findById(id);
+    public Optional<Arena> buscar (@PathVariable Long id) {
+        return arenas.findById(id);
     }
 
     @PostMapping
-    public CriterioMissao salvar(@RequestBody CriterioMissao cri){
-        return criterios.save(cri);
+    public Arena salvar(@RequestBody Arena are){
+        return arenas.save(are);
     }
 
     @GetMapping
-    public List<CriterioMissao> listar(){
-        return criterios.findAll();
+    public List<Arena> listar(){
+        return arenas.findAll();
     }
 
     @PutMapping
-    public CriterioMissao editar(@RequestBody CriterioMissao cri){
-        return criterios.save(cri);
+    public Arena editar(@RequestBody Arena are){
+        return arenas.save(are);
     }
 
     @DeleteMapping("/{id}")
     public void deletar(@PathVariable Long id) {
-        criterios.deleteById(id);
+        arenas.deleteById(id);
     }
 }
