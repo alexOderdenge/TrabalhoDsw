@@ -1,7 +1,9 @@
-package TrabalhoDsw.service;
+package TrabalhoDsw.servide;
 
-import TrabalhoDsw.Model.Categoria;
-import TrabalhoDsw.Model.CategoriaRepositorio;
+import TrabalhoDsw.Model.Equipe;
+import TrabalhoDsw.Model.Equipe;
+import TrabalhoDsw.Model.EquipeRepositorio;
+import TrabalhoDsw.Model.EquipeRepositorio;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,38 +17,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author Alex Odedenge
+ * @author Dênis
  */
-
 @RestController
-@RequestMapping("/categorias")
-public class CategoriaResource {
+@RequestMapping("/equipes")
+public class EquipeResource {
 
     @Autowired
-    private CategoriaRepositorio categorias;
+    private EquipeRepositorio equipes;
 
     @GetMapping("/{id}")
-    public Optional<Categoria> buscar (@PathVariable Long id) {
-        return categorias.findById(id);
+    public Optional<Equipe> buscar (@PathVariable Long id) {
+        return equipes.findById(id);
     }
 
     @PostMapping
-    public Categoria salvar(@RequestBody Categoria cat) {
-        return categorias.save(cat);
+    public Equipe salvar(@RequestBody Equipe equip) {
+        return equipes.save(equip);
     }
 
     @GetMapping
-    public List<Categoria> listar() {
-        return categorias.findAll();
+    public List<Equipe> listar() {
+        return equipes.findAll();
     }
 
     @PutMapping
-    public Categoria editar(@RequestBody Categoria cat) {
-        return categorias.save(cat);
+    public Equipe editar(@RequestBody Equipe equip) {
+        return equipes.save(equip);
     }
 
     @DeleteMapping("/{id}")
     public void deletar(@PathVariable Long id) {
-        categorias.deleteById(id);
+        equipes.deleteById(id);
     }
 }

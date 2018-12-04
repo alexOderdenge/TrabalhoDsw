@@ -1,4 +1,4 @@
-package TrabalhoDsw.TrabalhoDsw;
+package TrabalhoDsw.Model;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

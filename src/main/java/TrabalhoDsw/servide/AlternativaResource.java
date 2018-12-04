@@ -1,7 +1,9 @@
-package TrabalhoDsw.service;
+package TrabalhoDsw.servide;
 
-import TrabalhoDsw.Model.CriterioMissao;
-import TrabalhoDsw.Model.CriterioMissaoRepositorio;
+import TrabalhoDsw.Model.Alternativa;
+import TrabalhoDsw.Model.Alternativa;
+import TrabalhoDsw.Model.AlternativaRepositorio;
+import TrabalhoDsw.Model.AlternativaRepositorio;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,37 +17,38 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author Dênis
+ * @author Alex Oderdenge
  */
+
 @RestController
-@RequestMapping("criterios")
-public class CriterioMissaoResource {
+@RequestMapping("/alternativas")
+public class AlternativaResource {
 
     @Autowired
-    private CriterioMissaoRepositorio criterios;
+    private AlternativaRepositorio alternativas;
 
     @GetMapping("/{id}")
-    public Optional<CriterioMissao> buscar (@PathVariable Long id) {
-        return criterios.findById(id);
+    public Optional<Alternativa> buscar (@PathVariable Long id) {
+        return alternativas.findById(id);
     }
 
     @PostMapping
-    public CriterioMissao salvar(@RequestBody CriterioMissao cri){
-        return criterios.save(cri);
+    public Alternativa salvar(@RequestBody Alternativa alter){
+        return alternativas.save(alter);
     }
 
     @GetMapping
-    public List<CriterioMissao> listar(){
-        return criterios.findAll();
+    public List<Alternativa> listar(){
+        return alternativas.findAll();
     }
 
     @PutMapping
-    public CriterioMissao editar(@RequestBody CriterioMissao cri){
-        return criterios.save(cri);
+    public Alternativa editar(@RequestBody Alternativa alter){
+        return alternativas.save(alter);
     }
 
     @DeleteMapping("/{id}")
     public void deletar(@PathVariable Long id) {
-        criterios.deleteById(id);
+        alternativas.deleteById(id);
     }
 }
