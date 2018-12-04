@@ -1,8 +1,6 @@
-package TrabalhoDsw.servide;
+package TrabalhoDsw.service;
 
 import TrabalhoDsw.Model.Arena;
-import TrabalhoDsw.Model.Arena;
-import TrabalhoDsw.Model.ArenaRepositorio;
 import TrabalhoDsw.Model.ArenaRepositorio;
 import java.util.List;
 import java.util.Optional;

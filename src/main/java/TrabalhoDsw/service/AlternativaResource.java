@@ -1,9 +1,7 @@
-package TrabalhoDsw.servide;
+package TrabalhoDsw.service;
 
-import TrabalhoDsw.Model.Competicao;
-import TrabalhoDsw.Model.Competicao;
-import TrabalhoDsw.Model.CompeticaoRepositorio;
-import TrabalhoDsw.Model.CompeticaoRepositorio;
+import TrabalhoDsw.Model.Alternativa;
+import TrabalhoDsw.Model.AlternativaRepositorio;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,37 +15,38 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author Dênis
+ * @author Alex Oderdenge
  */
+
 @RestController
-@RequestMapping("competicoes")
-public class CompeticaoResource {
+@RequestMapping("/alternativas")
+public class AlternativaResource {
 
     @Autowired
-    private CompeticaoRepositorio competicoes;
+    private AlternativaRepositorio alternativas;
 
     @GetMapping("/{id}")
-    public Optional<Competicao> buscar (@PathVariable Long id) {
-        return competicoes.findById(id);
+    public Optional<Alternativa> buscar (@PathVariable Long id) {
+        return alternativas.findById(id);
     }
 
     @PostMapping
-    public Competicao salvar(@RequestBody Competicao comp){
-        return competicoes.save(comp);
+    public Alternativa salvar(@RequestBody Alternativa alter){
+        return alternativas.save(alter);
     }
 
     @GetMapping
-    public List<Competicao> listar(){
-        return competicoes.findAll();
+    public List<Alternativa> listar(){
+        return alternativas.findAll();
     }
 
     @PutMapping
-    public Competicao editar(@RequestBody Competicao comp){
-        return competicoes.save(comp);
+    public Alternativa editar(@RequestBody Alternativa alter){
+        return alternativas.save(alter);
     }
 
     @DeleteMapping("/{id}")
     public void deletar(@PathVariable Long id) {
-        competicoes.deleteById(id);
+        alternativas.deleteById(id);
     }
 }

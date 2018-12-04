@@ -1,7 +1,7 @@
-package TrabalhoDsw.servide;
+package TrabalhoDsw.service;
 
-import TrabalhoDsw.Model.Temporada;
-import TrabalhoDsw.Model.TemporadaRepositorio;
+import TrabalhoDsw.Model.Equipe;
+import TrabalhoDsw.Model.EquipeRepositorio;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,34 +18,34 @@ import org.springframework.web.bind.annotation.RestController;
  * @author Dênis
  */
 @RestController
-@RequestMapping("/temporadas")
-public class TemporadaResource {
+@RequestMapping("/equipes")
+public class EquipeResource {
 
     @Autowired
-    private TemporadaRepositorio temporadas;
+    private EquipeRepositorio equipes;
 
     @GetMapping("/{id}")
-    public Optional<Temporada> buscar (@PathVariable Long id) {
-        return temporadas.findById(id);
+    public Optional<Equipe> buscar (@PathVariable Long id) {
+        return equipes.findById(id);
     }
 
     @PostMapping
-    public Temporada salvar(@RequestBody Temporada equip) {
-        return temporadas.save(equip);
+    public Equipe salvar(@RequestBody Equipe equip) {
+        return equipes.save(equip);
     }
 
     @GetMapping
-    public List<Temporada> listar() {
-        return temporadas.findAll();
+    public List<Equipe> listar() {
+        return equipes.findAll();
     }
 
     @PutMapping
-    public Temporada editar(@RequestBody Temporada equip) {
-        return temporadas.save(equip);
+    public Equipe editar(@RequestBody Equipe equip) {
+        return equipes.save(equip);
     }
 
     @DeleteMapping("/{id}")
     public void deletar(@PathVariable Long id) {
-        temporadas.deleteById(id);
+        equipes.deleteById(id);
     }
 }
